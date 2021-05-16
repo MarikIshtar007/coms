@@ -42,7 +42,7 @@ class ChatItemWidget extends StatelessWidget {
                         fontSize: 12,
                         fontStyle: FontStyle.normal),
                   ),
-                  margin: EdgeInsets.only(left: 5.0, top: 5.0, bottom: 5.0),
+                  margin: EdgeInsets.only(right: 10.0, top: 5.0, bottom: 5.0),
                 )
               ],
             )
@@ -60,12 +60,12 @@ class ChatItemWidget extends StatelessWidget {
                 Container(
                   child: Text(
                     'This is a received message',
-                    style: TextStyle(color: Palette.selfMessageColor),
+                    style: TextStyle(color: Palette.otherMessageColor),
                   ),
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   width: 200.0,
                   decoration: BoxDecoration(
-                    color: Palette.selfMessageBackgroundColor,
+                    color: Palette.otherMessageBackgroundColor,
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                   margin: EdgeInsets.only(left: 10.0),
@@ -81,7 +81,7 @@ class ChatItemWidget extends StatelessWidget {
                     fontSize: 12,
                     fontStyle: FontStyle.normal),
               ),
-              margin: EdgeInsets.only(left: 5.0, top: 5.0, bottom: 5.0),
+              margin: EdgeInsets.only(left: 10.0, top: 5.0, bottom: 5.0),
             )
           ],
         ),

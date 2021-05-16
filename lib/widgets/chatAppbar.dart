@@ -12,7 +12,7 @@ class ChatAppBar extends StatelessWidget with PreferredSizeWidget {
     return Material(
       child: Container(
         decoration: BoxDecoration(
-            boxShadow: [BoxShadow(color: Colors.black, blurRadius: 5.0)]),
+            boxShadow: [BoxShadow(color: Colors.black, blurRadius: 3.0)]),
         child: Container(
           color: Colors.white70,
           child: Row(children: [
@@ -28,16 +28,9 @@ class ChatAppBar extends StatelessWidget with PreferredSizeWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Expanded(
-                              flex: 2,
-                              child: Center(
-                                child: Icon(
-                                  Icons.attach_file,
-                                  color: Palette.secondaryColor,
-                                ),
-                              )),
-                          Expanded(
                             flex: 6,
                             child: Container(
+                              margin: EdgeInsets.only(left: 20),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -45,9 +38,15 @@ class ChatAppBar extends StatelessWidget with PreferredSizeWidget {
                                 children: [
                                   Text(
                                     'Haany Ali',
-                                    style: TextStyle(fontSize: 20),
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
                                   ),
-                                  Text('@haanyali')
+                                  Text(
+                                    '@haanyali',
+                                    style:
+                                        TextStyle(fontStyle: FontStyle.italic),
+                                  )
                                 ],
                               ),
                             ),
