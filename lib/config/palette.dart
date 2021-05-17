@@ -14,10 +14,10 @@ class Palette {
   static Color secondaryTextColorLight = Colors.white70;
   static Color hintTextColorLight = Colors.white70;
 
-  static Color selfMessageBackgroundColor = Color(0xFF4Fc3F7);
-  static Color otherMessageBackgroundColor = Colors.white;
+  static Color otherMessageBackgroundColor = Color(0xAA62FAD7);
+  static Color selfMessageBackgroundColor = Color(0xFF5C7A88);
 
   static Color selfMessageColor = Colors.white;
-  static Color otherMessageColor = Color(0xFF3F3F3F);
+  static Color otherMessageColor = Color(0xFF424242);
   static Color greyColor = Colors.grey;
 }

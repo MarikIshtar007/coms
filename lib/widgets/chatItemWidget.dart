@@ -17,7 +17,7 @@ class ChatItemWidget extends StatelessWidget {
               children: [
                 Container(
                   child: Text(
-                    'This is a sent message',
+                    'This is a sent message by the user',
                     style: TextStyle(color: Palette.selfMessageColor),
                   ),
                   padding: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
