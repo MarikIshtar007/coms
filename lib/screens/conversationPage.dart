@@ -1,6 +1,6 @@
 import 'package:coms/widgets/chatAppbar.dart';
 import 'package:coms/widgets/chatListWidget.dart';
-import 'package:coms/widgets/inputWidget.dart';
+import 'package:coms/widgets/myInputWidget.dart';
 import 'package:flutter/material.dart';
 
 class ConversationPage extends StatefulWidget {
@@ -13,25 +13,34 @@ class _ConversationPageState extends State<ConversationPage> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-      body: Column(
-        children: [
-          Expanded(
-            child: Stack(
-              children: [
-                Container(
-                  margin: EdgeInsets.only(top: 100),
-                  color: Colors.grey[200],
-                  child: ChatListWidget(),
-                ),
-                SizedBox.fromSize(
-                  size: Size.fromHeight(100),
-                  child: ChatAppBar(),
-                )
-              ],
+      body: GestureDetector(
+        onTap: () {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+          if (!currentFocus.hasPrimaryFocus &&
+              currentFocus.focusedChild != null) {
+            currentFocus.focusedChild?.unfocus();
+          }
+        },
+        child: Column(
+          children: [
+            Expanded(
+              child: Stack(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 100),
+                    color: Color(0xFFF9F9F9),
+                    child: ChatListWidget(),
+                  ),
+                  SizedBox.fromSize(
+                    size: Size.fromHeight(100),
+                    child: ChatAppBar(),
+                  ),
+                ],
+              ),
             ),
-          ),
-          InputWidget()
-        ],
+            MyInputWidget()
+          ],
+        ),
       ),
     ));
   }
