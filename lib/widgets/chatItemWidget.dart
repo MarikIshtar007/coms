@@ -4,8 +4,8 @@ import 'package:coms/config/palette.dart';
 import 'package:intl/intl.dart';
 
 class ChatItemWidget extends StatelessWidget {
-  var index;
-  ChatItemWidget({this.index});
+  final int index;
+  ChatItemWidget({required this.index});
   @override
   Widget build(BuildContext context) {
     if (index % 2 == 0) {
