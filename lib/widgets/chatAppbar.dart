@@ -14,6 +14,7 @@ class ChatAppBar extends StatelessWidget with PreferredSizeWidget {
         decoration: BoxDecoration(
             boxShadow: [BoxShadow(color: Colors.black, blurRadius: 3.0)]),
         child: Container(
+          padding: EdgeInsets.only(top: 10, bottom: 10),
           color: Colors.white70,
           child: Row(children: [
             Expanded(
@@ -22,8 +23,8 @@ class ChatAppBar extends StatelessWidget with PreferredSizeWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-                    Container(
-                      height: 70 - width * 0.06,
+                    Expanded(
+                      flex: 7,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -38,14 +39,16 @@ class ChatAppBar extends StatelessWidget with PreferredSizeWidget {
                                 children: [
                                   Text(
                                     'Haany Ali',
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
+                                    style: textHeading,
+                                    // style: TextStyle(
+                                    //     fontSize: 20,
+                                    //     fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     '@haanyali',
-                                    style:
-                                        TextStyle(fontStyle: FontStyle.italic),
+                                    style: textStyle,
+                                    // style:
+                                    //     TextStyle(fontStyle: FontStyle.italic),
                                   )
                                 ],
                               ),
@@ -54,19 +57,32 @@ class ChatAppBar extends StatelessWidget with PreferredSizeWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      height: 23,
-                      padding: EdgeInsets.fromLTRB(20, 5, 5, 0),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text('Photos'),
-                          VerticalDivider(),
-                          Text('Videos'),
-                          VerticalDivider(),
-                          Text('Files')
-                        ],
+                    Expanded(
+                      flex: 3,
+                      child: Container(
+                        padding: EdgeInsets.fromLTRB(20, 5, 5, 0),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Photos',
+                            ),
+                            VerticalDivider(
+                              width: 30,
+                              color: Palette.primaryTextColorLight,
+                            ),
+                            Text(
+                              'Videos',
+                            ),
+                            VerticalDivider(
+                              width: 30,
+                              color: Palette.primaryTextColorLight,
+                            ),
+                            Text(
+                              'Files',
+                            ),
+                          ],
+                        ),
                       ),
                     )
                   ],
@@ -78,7 +94,7 @@ class ChatAppBar extends StatelessWidget with PreferredSizeWidget {
                 child: Container(
                   child: Center(
                     child: CircleAvatar(
-                      radius: (80 - (width * 0.06)) / 2,
+                      radius: 30,
                       child: Text('H'),
                     ),
                   ),

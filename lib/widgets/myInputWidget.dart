@@ -24,60 +24,66 @@ class _MyInputWidgetState extends State<MyInputWidget> {
       ),
       child: Row(
         children: [
-          Container(
-            decoration: BoxDecoration(
-                color: Colors.grey[400],
-                borderRadius: BorderRadius.circular(25)),
-            width: size.width * 0.8,
-            child: Row(
-              children: [
-                Container(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: size.width * 0.03,
-                      vertical: size.width * 0.02),
-                  child: Icon(Icons.sentiment_satisfied_alt_outlined,
-                      size: ratio * 13, color: Color(0xFF070707)),
-                ),
-                Container(
-                  width: size.width * 0.6,
-                  padding: EdgeInsets.symmetric(
-                      horizontal: size.width * 0.01,
-                      vertical: size.width * 0.02),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.only(right: size.width * 0.02),
+              decoration: BoxDecoration(
+                  color: Colors.grey[400],
+                  borderRadius: BorderRadius.circular(25)),
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: size.width * 0.03,
+                        vertical: size.width * 0.02),
+                    child: Icon(Icons.sentiment_satisfied_alt_outlined,
+                        size: ratio * 11, color: Color(0xFF070707)),
                   ),
-                  child: TextField(
-                    style: TextStyle(fontSize: ratio * 8),
-                    textCapitalization: TextCapitalization.words,
-                    textInputAction: TextInputAction.send,
-                    cursorColor: Palette.selfMessageBackgroundColor,
-                    minLines: 1,
-                    maxLines: 100,
-                    controller: textEditingController,
-                    onChanged: (value) {
-                      setState(() {
-                        if (value.isEmpty) {
-                          typedText = false;
-                        } else {
-                          typedText = true;
-                        }
-                      });
-                    },
-                    decoration: InputDecoration.collapsed(
-                      hintText: "Type your message",
-                      border: InputBorder.none,
+                  Flexible(
+                    fit: FlexFit.loose,
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: size.width * 0.01,
+                          vertical: size.width * 0.02),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      child: TextField(
+                        style: TextStyle(fontSize: ratio * 7),
+                        textCapitalization: TextCapitalization.words,
+                        textInputAction: TextInputAction.send,
+                        cursorColor: Palette.selfMessageBackgroundColor,
+                        minLines: 1,
+                        maxLines: 100,
+                        controller: textEditingController,
+                        onChanged: (value) {
+                          setState(() {
+                            if (value.isEmpty) {
+                              typedText = false;
+                            } else {
+                              typedText = true;
+                            }
+                          });
+                        },
+                        decoration: InputDecoration.collapsed(
+                          hintText: "Type your message",
+                          border: InputBorder.none,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  Icon(Icons.image)
+                ],
+              ),
             ),
           ),
-          Spacer(),
           GestureDetector(
             onTap: () {
               // sendMessages();
             },
             child: Container(
+                margin: EdgeInsets.symmetric(horizontal: size.width * 0.01),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: Theme.of(context).primaryColor.withOpacity(0.8),
@@ -88,12 +94,12 @@ class _MyInputWidgetState extends State<MyInputWidget> {
                     ? Icon(
                         Icons.send_rounded,
                         color: Colors.white,
-                        size: ratio * 13,
+                        size: ratio * 11,
                       )
                     : Icon(
                         Icons.mic,
                         color: Colors.white,
-                        size: ratio * 13,
+                        size: ratio * 11,
                       )),
           )
         ],
