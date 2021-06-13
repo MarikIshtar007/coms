@@ -1,13 +1,11 @@
 import 'package:coms/config/palette.dart';
+import 'package:coms/config/styles.dart';
 import 'package:flutter/material.dart';
 
 class ChatAppBar extends StatelessWidget with PreferredSizeWidget {
   final double height = 100;
   @override
   Widget build(BuildContext context) {
-    var textHeading =
-        TextStyle(color: Palette.primaryTextColorLight, fontSize: 20);
-    var textStyle = TextStyle(color: Palette.secondaryTextColorLight);
     return Material(
       child: Container(
         decoration: BoxDecoration(
@@ -38,14 +36,14 @@ class ChatAppBar extends StatelessWidget with PreferredSizeWidget {
                                 children: [
                                   Text(
                                     'Haany Ali',
-                                    style: textHeading,
+                                    style: Styles.textHeading,
                                     // style: TextStyle(
                                     //     fontSize: 20,
                                     //     fontWeight: FontWeight.bold),
                                   ),
                                   Text(
                                     '@haanyali',
-                                    style: textStyle,
+                                    style: Styles.textStyle,
                                     // style:
                                     //     TextStyle(fontStyle: FontStyle.italic),
                                   )

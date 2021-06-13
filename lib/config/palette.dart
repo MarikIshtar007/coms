@@ -20,4 +20,10 @@ class Palette {
   static Color selfMessageColor = Colors.white;
   static Color otherMessageColor = Color(0xFF424242);
   static Color greyColor = Colors.grey;
+
+  static Color primaryTextColor = Colors.black;
+  static Color secondaryTextColor = Colors.black87;
+  static Color primaryBackgroundColor = Colors.white;
+
+  static Color chatBackgroundColor = Color(0xfffafafa);
 }

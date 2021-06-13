@@ -1,5 +1,6 @@
 import 'package:coms/widgets/chatAppbar.dart';
 import 'package:coms/widgets/chatListWidget.dart';
+import 'package:coms/widgets/conversationBottomSheet.dart';
 import 'package:coms/widgets/myInputWidget.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,7 @@ class ConversationPage extends StatefulWidget {
 }
 
 class _ConversationPageState extends State<ConversationPage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -38,7 +40,15 @@ class _ConversationPageState extends State<ConversationPage> {
                 ],
               ),
             ),
-            MyInputWidget()
+            GestureDetector(
+              onPanUpdate: (details) {
+                if (details.delta.dy > 0) {
+                  _scaffoldKey.currentState
+                      ?.showBottomSheet((context) => ConversationBottomSheet());
+                }
+              },
+              child: MyInputWidget(),
+            )
           ],
         ),
       ),
